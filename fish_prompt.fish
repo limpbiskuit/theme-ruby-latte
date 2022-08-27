@@ -1,3 +1,9 @@
+
 function fish_prompt
-  echo -n [(set_color white --bold)(whoami)(set_color red)@(set_color white --bold)(prompt_hostname)(set_color normal)] (set_color green --bold)(prompt_pwd)(set_color normal)"> "
+  set -l white (set_color brwhite -o)
+  set -l red (set_color red -o)
+  set -l green (set_color green -o)
+  set -l normal (set_color normal)
+
+  echo -n -s [ $white (whoami) $red @ $white (prompt_hostname) $normal ] $green " " (prompt_pwd) $normal "> "
 end
