@@ -1,3 +1,7 @@
 function fish_right_prompt
-  echo -n (set_color 555)(date +%H:%M:%S)
+  set -l comment (set_color 444)
+  set -l normal (set_color normal)
+  set -l bold (set_color --bold)
+  
+  echo -n -s $comment [ $bold (date +%H:%M:%S) $normal $comment ]
 end
